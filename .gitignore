@@ -1,0 +1,9 @@
+# Ignore all downloaded models, blobs, and history inside the Ollama data directory
+ollama_data/*
+
+# Keep the .gitignore file itself (or a .gitkeep) so the empty directory is tracked by Git
+!ollama_data/.gitignore
+!ollama_data/.gitkeep
+
+# Ignore temporary Modelfile build remnants (if any are placed in the root)
+*.modelfile.tmp
