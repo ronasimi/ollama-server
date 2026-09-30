@@ -17,4 +17,8 @@ services:
       # Networking settings for local/containerized app access
       - OLLAMA_HOST=0.0.0.0
       - OLLAMA_ORIGINS="*" # Prevents CORS errors from browser-based local apps
+      
+      # Model retention and concurrency limits
+      - OLLAMA_KEEP_ALIVE=-1
+      - OLLAMA_MAX_LOADED_MODELS=1
     restart: unless-stopped
