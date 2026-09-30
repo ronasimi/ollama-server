@@ -13,24 +13,8 @@ services:
       - OLLAMA_IGPU_ENABLE=1
       - OLLAMA_FLASH_ATTENTION=1
       - OLLAMA_KV_CACHE_TYPE=q8_0
-      - OLLAMA_HOST=0.0.0.0:11434
-      - OLLAMA_ORIGINS=*
+      
+      # Networking settings for local/containerized app access
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_ORIGINS="*" # Prevents CORS errors from browser-based local apps
     restart: unless-stopped
-
-  pi:
-    build:
-      context: ./pi
-    container_name: pi
-    stdin_open: true
-    tty: true
-    depends_on:
-      - ollama
-    environment:
-      - OLLAMA_HOST=http://ollama:11434
-    volumes:
-      - pi_data:/root/.pi
-      - ${HOME}/Projects:/workspace
-    working_dir: /workspace
-
-volumes:
-  pi_data:
