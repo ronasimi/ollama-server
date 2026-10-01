@@ -17,3 +17,8 @@ The container exposes the Ollama API on port `11434`[cite: 1].
 This environment runs custom local models, specifically tuned for coding tasks with modified context windows:
 * **Qwen 2.5 Coder (1.5B):** Base model `qwen2.5-coder:1.5b` configured with a context window of 2,048 tokens (`PARAMETER num_ctx 2048`)[cite: 2].
 * **Qwen 2.5 Coder (3B):** Base model `qwen2.5-coder:3b` configured with an extended context window of 8,192 tokens (`PARAMETER num_ctx 8192`)[cite: 3].
+
+## WhiteRabbitNeo model source
+
+`Modelfile.whiterabbitneo` is the versioned source definition for the WhiteRabbitNeo security model used by the Pi harness. It includes the bounded MCP discovery/continuation rules required by the current Pi and MCP gateway configuration. Apply it through the same Ollama model-create/promotion workflow used for `security-agent:7b` after deploying the matching Pi and gateway changes.
+
