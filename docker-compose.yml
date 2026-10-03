@@ -13,7 +13,6 @@ services:
       - OLLAMA_IGPU_ENABLE=1
       - OLLAMA_FLASH_ATTENTION=1
       - OLLAMA_KV_CACHE_TYPE=q8_0
-      - OLLAMA_GO_TEMPLATE=1
       
       # Networking settings for local/containerized app access
       - OLLAMA_HOST=0.0.0.0
