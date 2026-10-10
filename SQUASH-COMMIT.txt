@@ -1,0 +1,14 @@
+chore(ollama): align local inference configuration with Pi r24
+
+Retain Vulkan/iGPU, flash attention, q8_0 KV cache and persistent model
+storage. Set a 32K server context default, one parallel request and one
+loaded model; allow explicit image selection through OLLAMA_IMAGE.
+
+Update the optional WhiteRabbitNeo definition to 32K and a short evidence
+prompt that follows Pi's current tool contract instead of legacy MCP calls.
+
+Consolidate inference setup, model creation, state and troubleshooting in
+current documentation, and add a Compose configuration check entrypoint.
+
+Validation: YAML structure, shell syntax and model-definition review.
+Docker Compose parsing, GPU use and inference require the deployment host.
